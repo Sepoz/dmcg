@@ -40,6 +40,16 @@ export const initialData = {
             title: "myHand",
             cardIDs: ["card1", "card2", "card3"],
         },
+        rows2: {
+            id: "rows2",
+            title: "handToHand",
+            cardIDs: [],
+        },
+        rows3: {
+            id: "rows3",
+            title: "longDistance",
+            cardIDs: [],
+        },
     },
-    rowsOrder: ["rows1"],
+    rowsOrder: ["rows1", "rows2", "rows3"],
 };
