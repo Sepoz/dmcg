@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Draggable } from "react-beautiful-dnd";
 
+import CardInfo from "../cardInfo/CardInfo";
 import "./Card.css";
 
 const Card = (props) => {
+    const [showInfo, setShowInfo] = useState(false);
+
+    const handleShowInfo = () => {
+        setShowInfo(!showInfo);
+        console.log(showInfo);
+    };
+
     return (
         <Draggable draggableId={props.card.id} index={props.index}>
             {(provided) => {
@@ -13,31 +21,11 @@ const Card = (props) => {
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                         ref={provided.innerRef}
+                        onDoubleClick={handleShowInfo}
                     >
-                        <div className="card-image"></div>
-                        <div className="card-text">
-                            <h2>{props.card.content.name}</h2>
-                            <p>{props.card.content.description}</p>
-                        </div>
-                        <div className="card-stats">
-                            <div className="stat">
-                                <div className="value">
-                                    {props.card.content.atk}
-                                </div>
-                                <div className="type">atk</div>
-                            </div>
-                            <div className="stat">
-                                <div className="value">
-                                    {props.card.content.def}
-                                </div>
-                                <div className="type">def</div>
-                            </div>
-                            <div className="stat">
-                                <div className="value">
-                                    {props.card.content.type}
-                                </div>
-                                <div className="type">type</div>
-                            </div>
+                        {showInfo && <CardInfo card={props.card.content} />}
+                        <div className="card-image">
+                            <img src="" alt="card" />
                         </div>
                     </div>
                 );

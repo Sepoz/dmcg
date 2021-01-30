@@ -2,16 +2,15 @@ import React from "react";
 import { Droppable } from "react-beautiful-dnd";
 
 import Card from "../card/Card";
-import "../row/row.css";
+import "./row.css";
 
 const Row = (props) => {
     return (
         <>
-            <h1>{props.row.title}</h1>
             <Droppable droppableId={props.row.id} direction="horizontal">
                 {(provided) => (
                     <div
-                        className="row"
+                        className={`${props.row.id}`}
                         ref={provided.innerRef}
                         {...provided.droppableProps}
                     >

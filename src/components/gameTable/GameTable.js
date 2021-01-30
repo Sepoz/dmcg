@@ -3,6 +3,7 @@ import { DragDropContext } from "react-beautiful-dnd";
 
 import { initialData } from "../../mockData/initialData";
 import Row from "../row/Row";
+import "./gameTable.css";
 
 const GameTable = () => {
     const [items, setItems] = useState(initialData);
@@ -73,17 +74,21 @@ const GameTable = () => {
     };
 
     return (
-        <DragDropContext onDragEnd={onDragEnd}>
-            {items.rowsOrder.map((rowsID) => {
-                // get all the rows data
-                const row = items.rows[rowsID];
+        <div className="game-table">
+            <DragDropContext onDragEnd={onDragEnd}>
+                {items.rowsOrder.map((rowsID) => {
+                    // get all the rows data
+                    const row = items.rows[rowsID];
 
-                // get the cardIDs of every row, then get all the cards data
-                const cards = row.cardIDs.map((cardID) => items.cards[cardID]);
+                    // get the cardIDs of every row, then get all the cards data
+                    const cards = row.cardIDs.map(
+                        (cardID) => items.cards[cardID]
+                    );
 
-                return <Row key={row.id} row={row} cards={cards} />;
-            })}
-        </DragDropContext>
+                    return <Row key={row.id} row={row} cards={cards} />;
+                })}
+            </DragDropContext>
+        </div>
     );
 };
 

@@ -1,0 +1,15 @@
+* {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.game-table {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: ". row3" ". row2" ". row1";
+    grid-row-gap: 10px;
+}
