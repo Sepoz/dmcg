@@ -14,9 +14,13 @@ const Row = (props) => {
                         ref={provided.innerRef}
                         {...provided.droppableProps}
                     >
-                        {console.log(provided.innerRef)}
                         {props.cards.map((card, i) => (
-                            <Card key={card.id} card={card} index={i} />
+                            <Card
+                                key={card.id}
+                                card={card}
+                                row={props.row.id}
+                                index={i}
+                            />
                         ))}
 
                         {provided.placeholder}

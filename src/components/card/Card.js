@@ -9,11 +9,14 @@ const Card = (props) => {
 
     const handleShowInfo = () => {
         setShowInfo(!showInfo);
-        console.log(showInfo);
     };
 
     return (
-        <Draggable draggableId={props.card.id} index={props.index}>
+        <Draggable
+            draggableId={props.card.id}
+            index={props.index}
+            isDragDisabled={props.row !== "rows1" ? true : false}
+        >
             {(provided) => {
                 return (
                     <div
