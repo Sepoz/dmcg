@@ -1,10 +1,10 @@
 import React from "react";
 import { Droppable } from "react-beautiful-dnd";
 
-import Card from "../card/Card";
+import MyCard from "../myCard/MyCard";
 import "./row.css";
 
-const Row = (props) => {
+const MyRow = (props) => {
     const { row, cards } = props;
 
     return (
@@ -17,7 +17,7 @@ const Row = (props) => {
                         {...provided.droppableProps}
                     >
                         {cards.map((card, i) => (
-                            <Card
+                            <MyCard
                                 key={card.id}
                                 card={card}
                                 row={row.id}
@@ -33,4 +33,4 @@ const Row = (props) => {
     );
 };
 
-export default Row;
+export default MyRow;

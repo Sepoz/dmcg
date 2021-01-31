@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 
 import { initialData } from "../../mockData/initialData";
-import Row from "../row/Row";
+import MyRow from "../myRow/MyRow";
 import "./gameTable.css";
 
 const GameTable = () => {
@@ -86,7 +86,7 @@ const GameTable = () => {
                         (cardID) => items.cards[cardID]
                     );
 
-                    return <Row key={row.id} row={row} cards={cards} />;
+                    return <MyRow key={row.id} row={row} cards={cards} />;
                 })}
             </DragDropContext>
         </div>

@@ -4,7 +4,7 @@ import { Draggable } from "react-beautiful-dnd";
 import CardInfo from "../cardInfo/CardInfo";
 import "./Card.css";
 
-const Card = (props) => {
+const MyCard = (props) => {
     const { card, index, row } = props;
 
     const [showInfo, setShowInfo] = useState(false);
@@ -55,4 +55,4 @@ const Card = (props) => {
     );
 };
 
-export default Card;
+export default MyCard;

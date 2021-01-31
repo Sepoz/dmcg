@@ -1,7 +1,0 @@
-home page
-login to google oauth2 (save some data to db)
-matchmaking
-gametable
-gamecards
-gamemechanics
-
