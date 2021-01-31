@@ -9,6 +9,7 @@ export const initialData = {
                 description: "Proprio lui",
                 str: 5,
                 type: "corpo a corpo",
+                isPlayed: false,
             },
         },
         card2: {
@@ -18,6 +19,7 @@ export const initialData = {
                 description: "Mario Doccia ha preso il posto di Dario",
                 str: 5,
                 type: "corpo a corpo",
+                isPlayed: false,
             },
         },
         card3: {
@@ -27,6 +29,7 @@ export const initialData = {
                 description: "Alterego benevolo di Dario Moccia",
                 str: 5,
                 type: "corpo a corpo",
+                isPlayed: false,
             },
         },
     },

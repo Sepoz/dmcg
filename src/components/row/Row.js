@@ -5,20 +5,22 @@ import Card from "../card/Card";
 import "./row.css";
 
 const Row = (props) => {
+    const { row, cards } = props;
+
     return (
         <>
-            <Droppable droppableId={props.row.id} direction="horizontal">
+            <Droppable droppableId={row.id} direction="horizontal">
                 {(provided) => (
                     <div
-                        className={`${props.row.id}`}
+                        className={`${row.id}`}
                         ref={provided.innerRef}
                         {...provided.droppableProps}
                     >
-                        {props.cards.map((card, i) => (
+                        {cards.map((card, i) => (
                             <Card
                                 key={card.id}
                                 card={card}
-                                row={props.row.id}
+                                row={row.id}
                                 index={i}
                             />
                         ))}

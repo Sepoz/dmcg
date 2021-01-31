@@ -5,17 +5,35 @@ import CardInfo from "../cardInfo/CardInfo";
 import "./Card.css";
 
 const Card = (props) => {
+    const { card, index, row } = props;
+
     const [showInfo, setShowInfo] = useState(false);
 
+    // onDoubleClick show a popup with more info on the card
     const handleShowInfo = () => {
         setShowInfo(!showInfo);
     };
 
+    // if the card is removed from your hand set isPlayed to true
+    // the function returns true to disable isDragDisabled
+    const handleIsPlayed = () => {
+        if (row !== "rows1") {
+            if (card.content.isPlayed === false) {
+                card.content.isPlayed = true;
+            }
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+    // the card will be a single image
+
     return (
         <Draggable
-            draggableId={props.card.id}
-            index={props.index}
-            isDragDisabled={props.row !== "rows1" ? true : false}
+            draggableId={card.id}
+            index={index}
+            isDragDisabled={handleIsPlayed()}
         >
             {(provided) => {
                 return (
@@ -26,7 +44,7 @@ const Card = (props) => {
                         ref={provided.innerRef}
                         onDoubleClick={handleShowInfo}
                     >
-                        {showInfo && <CardInfo card={props.card.content} />}
+                        {showInfo && <CardInfo card={card.content} />}
                         <div className="card-image">
                             <img src="" alt="card" />
                         </div>

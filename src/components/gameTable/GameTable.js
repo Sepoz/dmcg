@@ -8,6 +8,7 @@ import "./gameTable.css";
 const GameTable = () => {
     const [items, setItems] = useState(initialData);
 
+    // react-beautiful-dnd boilerplate
     const onDragEnd = (result) => {
         const { destination, source, draggableId } = result;
 
