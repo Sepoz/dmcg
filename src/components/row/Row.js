@@ -2,22 +2,27 @@ import React from "react";
 import { Droppable } from "react-beautiful-dnd";
 
 import Card from "../card/Card";
-import "../row/row.css";
+import "./row.css";
 
 const Row = (props) => {
+    const { row, cards } = props;
+
     return (
         <>
-            <h1>{props.row.title}</h1>
-            <Droppable droppableId={props.row.id} direction="horizontal">
+            <Droppable droppableId={row.id} direction="horizontal">
                 {(provided) => (
                     <div
-                        className="row"
+                        className={`${row.id}`}
                         ref={provided.innerRef}
                         {...provided.droppableProps}
                     >
-                        {console.log(provided.innerRef)}
-                        {props.cards.map((card, i) => (
-                            <Card key={card.id} card={card} index={i} />
+                        {cards.map((card, i) => (
+                            <Card
+                                key={card.id}
+                                card={card}
+                                row={row.id}
+                                index={i}
+                            />
                         ))}
 
                         {provided.placeholder}

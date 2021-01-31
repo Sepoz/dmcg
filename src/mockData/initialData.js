@@ -1,36 +1,35 @@
+// long description "Adds 3 mana of any single color of your choiceto your mana pool, then is discarded. Tapping this artifact can be played as an interrupt."
+
 export const initialData = {
     cards: {
         card1: {
             id: "card1",
             content: {
                 name: "Dario Moccia",
-                description:
-                    "Adds 3 mana of any single color of your choiceto your mana pool, then is discarded. Tapping this artifact can be played as an interrupt.",
-                atk: 2,
-                def: 3,
-                type: "artifact",
+                description: "Proprio lui",
+                str: 5,
+                type: "corpo a corpo",
+                isPlayed: false,
             },
         },
         card2: {
             id: "card2",
             content: {
                 name: "Mario Doccia",
-                description:
-                    "Adds 3 mana of any single color of your choiceto your mana pool, then is discarded. Tapping this artifact can be played as an interrupt.",
-                atk: 2,
-                def: 3,
-                type: "artifact",
+                description: "Mario Doccia ha preso il posto di Dario",
+                str: 5,
+                type: "corpo a corpo",
+                isPlayed: false,
             },
         },
         card3: {
             id: "card3",
             content: {
                 name: "Piero Fasulli",
-                description:
-                    "Adds 3 mana of any single color of your choiceto your mana pool, then is discarded. Tapping this artifact can be played as an interrupt.",
-                atk: 2,
-                def: 3,
-                type: "artifact",
+                description: "Alterego benevolo di Dario Moccia",
+                str: 5,
+                type: "corpo a corpo",
+                isPlayed: false,
             },
         },
     },
